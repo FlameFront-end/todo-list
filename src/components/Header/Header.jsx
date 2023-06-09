@@ -1,9 +1,8 @@
-import React from 'react'
-import Logo from '../../assets/logo.png'
-import s from './Header.module.scss'
+import React from "react";
+import s from "./Header.module.scss";
 
 const Header = () => {
-	return <img className={s.logo} src={Logo} alt='Логотип' />
-}
+  return <h1 className={s.header}>TODOS</h1>;
+};
 
-export default Header
+export default Header;

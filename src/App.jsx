@@ -1,16 +1,18 @@
 import NewTodo from "./components/NewTodo/NewTodo";
 import TodoList from "./components/TodoList/TodoList";
 import Header from ".//components/Header/Header";
-import "./app.scss";
 import TodoFilter from "./components/TodoFilter/TodoFilter";
+import "./app.scss";
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <TodoFilter />
-      <NewTodo />
-      <TodoList />
+      <div className="todo-container">
+        <NewTodo />
+        <TodoList />
+        <TodoFilter />
+      </div>
     </div>
   );
 }

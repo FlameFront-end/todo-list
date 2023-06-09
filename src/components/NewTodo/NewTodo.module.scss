@@ -1,0 +1,14 @@
+.input {
+  all: unset;
+  border-bottom: 2px solid gray;
+  width: 300px;
+  padding: 10px 30px;
+}
+.input::placeholder {
+}
+.err {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  color: red;
+}
