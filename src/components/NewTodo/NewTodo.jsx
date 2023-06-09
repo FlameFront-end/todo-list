@@ -8,6 +8,7 @@ const NewTodo = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addTodo(e.target.title.value));
+    e.target.title.value = "";
   };
   return (
     <form onSubmit={handleSubmit}>
