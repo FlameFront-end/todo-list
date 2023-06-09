@@ -4,15 +4,20 @@ import { selectActiveFilter } from "../../store/filters/filters-selectors";
 import { setFilter } from "../../store/filters/filters-actions";
 import s from "./TodoFilter.module.scss";
 import { selectVisibleTodos } from "../../store/todos/todos-selectors";
+import { removeTodo } from "../../store/todos/todos-actions";
 
 const TodoFilter = () => {
   const dispatch = useDispatch();
   const activeFilter = useSelector(selectActiveFilter);
   const todos = useSelector((state) => selectVisibleTodos(state, activeFilter));
 
+  const handleDelete = () => {
+    dispatch(removeTodo());
+  };
+
   return (
     <div className={s.footer}>
-      <div className={s.todo_counter}>{todos.length} items left</div>
+      <div>{todos.length} items left</div>
       <div>
         <button
           onClick={() => {
@@ -41,6 +46,10 @@ const TodoFilter = () => {
           }`}
         >
           Completed
+        </button>
+
+        <button className={s.btn} onClick={handleDelete}>
+          Clear completed
         </button>
       </div>
     </div>
